@@ -54,7 +54,7 @@ public class Main extends JFrame {
         contentPane.add(Memo);
         JEditorPane Memoeditor = new JEditorPane();
         Memoeditor.setForeground(new Color(255, 255, 255));
-        Memoeditor.setText("이곳에 메모를 하세요.          이 메모장은 움직일 수 있습니다.");
+        Memoeditor.setText("이곳에 메모를 하세요.             이 메모장은 움직일 수 있습니다.");
         Memoeditor.setFont(new Font("맑은 고딕", Font.BOLD, 15));
         Memoeditor.setBackground(Color.DARK_GRAY);
         Memo.getContentPane().add(Memoeditor);

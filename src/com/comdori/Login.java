@@ -1,5 +1,7 @@
 package com.comdori;
 
+import com.comdori.Tab.Signup;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -113,17 +115,17 @@ public class Login extends JFrame {
         JButton button_1 = new JButton("SIGN UP");
         button_1.setBounds(95, 233, 114, 33);
         button_1.setIcon(null);
-       /* button_1.addActionListener(new ActionListener() {
+        button_1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                new SIGNUP().setVisible(true);			//회원가입 창으로 이동
+                new Signup().setVisible(true);			//회원가입 창으로 이동
             }
-        });*/
+        });
         button_1.setFont(new Font("맑은 고딕", Font.BOLD, 17));
         getContentPane().add(button_1);
 
         /*			프로그램 버전 정보				*/
         JLabel lblVer = new JLabel("Version 2.0");
-        lblVer.setFont(new Font("맑은 고딕", Font.BOLD, 15));
+        lblVer.setFont(new Font("맑은 고딕", Font.BOLD, 13));
         lblVer.setForeground(Color.YELLOW);
         lblVer.setBounds(322, 276, 80, 21);
         getContentPane().add(lblVer);
