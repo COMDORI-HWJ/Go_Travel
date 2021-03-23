@@ -1,4 +1,4 @@
-package com.comdori.Tab;
+package com.comdori;
 
 import java.awt.*;
 /*

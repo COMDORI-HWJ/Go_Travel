@@ -1,6 +1,7 @@
 package com.comdori.Tab;
 
 import com.comdori.*;
+import com.comdori.Login;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,6 +18,7 @@ public class Tab1 extends JPanel {
         lblWelcome.setFont(new Font("굴림", Font.BOLD, 99));
         lblWelcome.setBounds(40, 33, 538, 195);
         add(lblWelcome);
+
 
         JLabel lblS = new JLabel("admin님 오늘도 즐거운 여행되세요!");
         lblS.setForeground(Color.WHITE);

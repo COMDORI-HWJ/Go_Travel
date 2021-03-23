@@ -86,14 +86,17 @@ public class Main extends JFrame {
         pane.addTab("홈", tab1);
         tab1.setLayout(null);
 
-        /*Tab2 tab2 = new Tab2();
+        /* 라이센스 재발급 필요 보류
+        Tab2 tab2 = new Tab2();
         pane.addTab("지도", tab2);
         tab2.setLayout(null);
+        */
+
 
         Tab3 tab3 = new Tab3();
         pane.addTab("세계 시간", tab3);
         tab3.setLayout(null);
-
+/*
         Tab4 tab4 = new Tab4();
         pane.addTab("날씨", tab4);
         tab4.setLayout(null);
