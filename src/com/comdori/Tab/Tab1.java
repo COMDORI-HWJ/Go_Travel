@@ -9,6 +9,9 @@ import java.awt.event.*;
 
 public class Tab1 extends JPanel {
 
+    Login login1 = new Login();
+    String id = login1.ID1;
+
     public Tab1() {
         setLayout(null);
         setBounds(0, 0, 1234, 662);
@@ -19,9 +22,9 @@ public class Tab1 extends JPanel {
         lblWelcome.setBounds(40, 33, 538, 195);
         add(lblWelcome);
 
-       // String ID = Login.
 
-        JLabel lblS = new JLabel("admin"+"님 오늘도 즐거운 여행되세요!");
+        System.out.println("userid 확인"+id);
+        JLabel lblS = new JLabel( id+"님 오늘도 즐거운 여행되세요!");
         lblS.setForeground(Color.WHITE);
         lblS.setFont(new Font("맑은 고딕", Font.PLAIN, 70));
         lblS.setBounds(24, 238, 1172, 125);

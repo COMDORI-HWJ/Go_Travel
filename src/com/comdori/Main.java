@@ -8,6 +8,8 @@ import com.comdori.Tab.*;
 
 public class Main extends JFrame {
 
+    Login login1 = new Login();
+    String id = login1.ID1;
     private JPanel contentPane;
 
 
@@ -54,7 +56,7 @@ public class Main extends JFrame {
         contentPane.add(Memo);
         JEditorPane Memoeditor = new JEditorPane();
         Memoeditor.setForeground(new Color(255, 255, 255));
-        Memoeditor.setText("이곳에 메모를 하세요.             이 메모장은 움직일 수 있습니다.");
+        Memoeditor.setText(id+"님 이곳에 메모를 하세요."+"\n이 메모장은 움직일 수 있습니다.");
         Memoeditor.setFont(new Font("맑은 고딕", Font.BOLD, 15));
         Memoeditor.setBackground(Color.DARK_GRAY);
         Memo.getContentPane().add(Memoeditor);

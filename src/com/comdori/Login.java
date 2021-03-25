@@ -4,26 +4,22 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-import java.io.*;
-import java.nio.Buffer;
-import java.util.*;
-
 
 public class Login extends JFrame {
     public JTextField IDField;
     public TextField PasswordField;
-    public String ID1;
+    public static String ID1; //스태틱을 사용하면 메모리에 변수가 공유된다. - 스태틱 덕분에 사용자 이름 모든 탭에서 불러오기 가능!
+
     //private JPasswordField PasswordField;
     private boolean Logincheck;
     static Toolkit toolkit = Toolkit.getDefaultToolkit();	//프레임 가운데 고정
     MyPanel panel = new MyPanel();
 
-    /**
-     * Launch the application.
-     */
+
     public static void main(String[] args) {
         System.out.println("======================\n학번: 201504034\n이름: 하원지\n======================");
-        System.out.println("\n=====Version 2.0======");
+        System.out.println("\n=====Version 1.1======");
+
         EventQueue.invokeLater(new Runnable() {
             public void run() {
 
@@ -44,6 +40,7 @@ public class Login extends JFrame {
     }
 
     public Login() {
+
         getContentPane().setBackground(new Color(153, 204, 51));
 
         Image img = toolkit.getImage("System/Images/airplane.gif");		//프로그램 아이콘
@@ -135,7 +132,7 @@ public class Login extends JFrame {
         getContentPane().add(button_1);
 
         /*			프로그램 버전 정보				*/
-        JLabel lblVer = new JLabel("Version 2.0");
+        JLabel lblVer = new JLabel("Version 1.1");
         lblVer.setFont(new Font("맑은 고딕", Font.BOLD, 13));
         lblVer.setForeground(Color.YELLOW);
         lblVer.setBounds(322, 276, 80, 21);
@@ -154,8 +151,7 @@ public class Login extends JFrame {
         int wj =JOptionPane.showConfirmDialog(null, "로그인 하시겠습니까?", "로그인", JOptionPane.YES_NO_OPTION);
         /* 임시 로그인 하드 코딩 */
         //   if(IDField.getText().equals("admin1") && new String(PasswordField.getPassword()).equals("1234")){
-        if(IDField.getText().equals("admin1") && (PasswordField.getText().equals("1234"))){
-            ID1 = IDField.getText();
+        if(IDField.getText().equals("hwj") && (PasswordField.getText().equals("1234"))){
             if(wj == JOptionPane.CANCEL_OPTION){
                 JOptionPane.showMessageDialog(null, "로그인이 취소되었습니다.", "로그인", JOptionPane.WARNING_MESSAGE);
             }
@@ -167,6 +163,7 @@ public class Login extends JFrame {
 
             if(Login_Check()){
                 JOptionPane.showMessageDialog(null, IDField.getText()+"님 환영합니다!", "로그인", JOptionPane.PLAIN_MESSAGE);
+                ID1 = IDField.getText();
                 /* 사용자 로그인 정보 출력 */
                 System.out.println("User ID: "+IDField.getText());
                 System.out.println("User Password: "+PasswordField.getText());
