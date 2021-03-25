@@ -19,8 +19,9 @@ public class Tab1 extends JPanel {
         lblWelcome.setBounds(40, 33, 538, 195);
         add(lblWelcome);
 
+       // String ID = Login.
 
-        JLabel lblS = new JLabel("admin님 오늘도 즐거운 여행되세요!");
+        JLabel lblS = new JLabel("admin"+"님 오늘도 즐거운 여행되세요!");
         lblS.setForeground(Color.WHITE);
         lblS.setFont(new Font("맑은 고딕", Font.PLAIN, 70));
         lblS.setBounds(24, 238, 1172, 125);

@@ -4,14 +4,20 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
+import java.io.*;
+import java.nio.Buffer;
+import java.util.*;
+
 
 public class Login extends JFrame {
     public JTextField IDField;
-    private JPasswordField PasswordField;
+    public TextField PasswordField;
+    public String ID1;
+    //private JPasswordField PasswordField;
     private boolean Logincheck;
     static Toolkit toolkit = Toolkit.getDefaultToolkit();	//프레임 가운데 고정
     MyPanel panel = new MyPanel();
-    String ID1;
+
     /**
      * Launch the application.
      */
@@ -61,7 +67,8 @@ public class Login extends JFrame {
         IDField.setBounds(95, 132, 270, 21);
         getContentPane().add(IDField);
         IDField.setColumns(10);
-        ID1 = IDField.getText();
+       // BufferedWriter bf = new BufferedWriter(fw);
+
 
 
 
@@ -71,7 +78,10 @@ public class Login extends JFrame {
         Password.setForeground(Color.WHITE);
         Password.setFont(new Font("맑은 고딕", Font.BOLD, 14));
         getContentPane().add(Password);
-        PasswordField = new JPasswordField();
+        //PasswordField = new JPasswordField();
+
+        PasswordField = new TextField();
+        PasswordField.setEchoChar('*'); //암호화 안함, 입력시만 *로 표시돰.
         PasswordField.setBounds(95, 161, 270, 21);
         getContentPane().add(PasswordField);
 
@@ -143,8 +153,9 @@ public class Login extends JFrame {
     public void LoginCheck(){
         int wj =JOptionPane.showConfirmDialog(null, "로그인 하시겠습니까?", "로그인", JOptionPane.YES_NO_OPTION);
         /* 임시 로그인 하드 코딩 */
-        if(IDField.getText().equals("admin1") && new String(PasswordField.getPassword()).equals("1234")){
-
+        //   if(IDField.getText().equals("admin1") && new String(PasswordField.getPassword()).equals("1234")){
+        if(IDField.getText().equals("admin1") && (PasswordField.getText().equals("1234"))){
+            ID1 = IDField.getText();
             if(wj == JOptionPane.CANCEL_OPTION){
                 JOptionPane.showMessageDialog(null, "로그인이 취소되었습니다.", "로그인", JOptionPane.WARNING_MESSAGE);
             }
@@ -158,7 +169,8 @@ public class Login extends JFrame {
                 JOptionPane.showMessageDialog(null, IDField.getText()+"님 환영합니다!", "로그인", JOptionPane.PLAIN_MESSAGE);
                 /* 사용자 로그인 정보 출력 */
                 System.out.println("User ID: "+IDField.getText());
-                System.out.println("User Password: "+PasswordField.getPassword());
+                System.out.println("User Password: "+PasswordField.getText());
+                System.out.println("String ID값 출력: "+ID1);
 
                 new Main().setLocationRelativeTo(null);	//메인프레임이 가운데시작점으로 열린다.
                 dispose();			//뒤에 있는 프레임이 꺼진다.
