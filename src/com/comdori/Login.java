@@ -15,10 +15,9 @@ public class Login extends JFrame {
     static Toolkit toolkit = Toolkit.getDefaultToolkit();	//프레임 가운데 고정
     MyPanel panel = new MyPanel();
 
-
     public static void main(String[] args) {
         System.out.println("======================\n학번: 201504034\n이름: 하원지\n======================");
-        System.out.println("\n=====Version 1.1======");
+        System.out.println("\n=====Version 1.2======");
 
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -53,8 +52,6 @@ public class Login extends JFrame {
         setDefaultCloseOperation(3);
         getContentPane().setLayout(null);
 
-
-
         JLabel ID = new JLabel("           ID:");
         ID.setBounds(21, 132, 78, 24);
         ID.setForeground(Color.WHITE);
@@ -64,11 +61,6 @@ public class Login extends JFrame {
         IDField.setBounds(95, 132, 270, 21);
         getContentPane().add(IDField);
         IDField.setColumns(10);
-       // BufferedWriter bf = new BufferedWriter(fw);
-
-
-
-
 
         JLabel Password = new JLabel(" Password:");
         Password.setBounds(21, 158, 78, 24);
@@ -76,15 +68,12 @@ public class Login extends JFrame {
         Password.setFont(new Font("맑은 고딕", Font.BOLD, 14));
         getContentPane().add(Password);
         //PasswordField = new JPasswordField();
-
         PasswordField = new TextField();
         PasswordField.setEchoChar('*'); //암호화 안함, 입력시만 *로 표시돰.
         PasswordField.setBounds(95, 161, 270, 21);
         getContentPane().add(PasswordField);
 
-
-
-
+        /* 나의 계정 찾기
         JButton btnLogin = new JButton("Find My Account");
         btnLogin.setBounds(212, 233, 153, 33);
         btnLogin.setOpaque(true);
@@ -92,19 +81,14 @@ public class Login extends JFrame {
             public void actionPerformed(ActionEvent e) {
             }
         });
-
-
-
         btnLogin.setFont(new Font("맑은 고딕", Font.BOLD, 13));
         getContentPane().add(btnLogin);
+         */
+
         JLabel label = new JLabel("");
         label.setBounds(21, 11, 362, 102);
         label.setIcon(new ImageIcon("System/Images/GoTravel.png"));
         getContentPane().add(label);
-
-
-
-
 
         /*	 				로그인	 				 */
         JButton button = new JButton("LOGIN");
@@ -114,9 +98,9 @@ public class Login extends JFrame {
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 LoginCheck();
-
             }
-        });
+        }
+        );
 
         /* 			회원가입 			*/
 
@@ -132,10 +116,10 @@ public class Login extends JFrame {
         getContentPane().add(button_1);
 
         /*			프로그램 버전 정보				*/
-        JLabel lblVer = new JLabel("Version 1.1");
+        JLabel lblVer = new JLabel("Version 1.1.1");
         lblVer.setFont(new Font("맑은 고딕", Font.BOLD, 13));
         lblVer.setForeground(Color.YELLOW);
-        lblVer.setBounds(322, 276, 80, 21);
+        lblVer.setBounds(300, 280, 150, 21);
         getContentPane().add(lblVer);
 
         /*			프레임 배경화면				*/
@@ -144,7 +128,6 @@ public class Login extends JFrame {
         label_1.setVerticalAlignment(SwingConstants.TOP);
         label_1.setIcon(new ImageIcon("System/Images/BG.png"));
         getContentPane().add(label_1);
-
 
     }
     public void LoginCheck(){
@@ -159,16 +142,13 @@ public class Login extends JFrame {
                 Logincheck = true;
             }
 
-
-
             if(Login_Check()){
                 JOptionPane.showMessageDialog(null, IDField.getText()+"님 환영합니다!", "로그인", JOptionPane.PLAIN_MESSAGE);
-                ID1 = IDField.getText();
+                ID1 = IDField.getText(); //사용자 이름 저장
                 /* 사용자 로그인 정보 출력 */
                 System.out.println("User ID: "+IDField.getText());
                 System.out.println("User Password: "+PasswordField.getText());
                 System.out.println("String ID값 출력: "+ID1);
-
                 new Main().setLocationRelativeTo(null);	//메인프레임이 가운데시작점으로 열린다.
                 dispose();			//뒤에 있는 프레임이 꺼진다.
             }
@@ -179,12 +159,9 @@ public class Login extends JFrame {
 
     }
 
-
     public boolean Login_Check(){
-
         return Logincheck;
     }
     class MyPanel extends JPanel {
-
     }
 }

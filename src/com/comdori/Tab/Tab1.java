@@ -23,7 +23,7 @@ public class Tab1 extends JPanel {
         add(lblWelcome);
 
 
-        System.out.println("userid 확인"+id);
+        System.out.println("userid 확인: "+id);
         JLabel lblS = new JLabel( id+"님 오늘도 즐거운 여행되세요!");
         lblS.setForeground(Color.WHITE);
         lblS.setFont(new Font("맑은 고딕", Font.PLAIN, 70));
