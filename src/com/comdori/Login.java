@@ -17,7 +17,7 @@ public class Login extends JFrame {
 
     public static void main(String[] args) {
         System.out.println("======================\n학번: 201504034\n이름: 하원지\n======================");
-        System.out.println("\n=====Version 1.2======");
+        System.out.println("\n=====Version 1.1.2======");
 
         EventQueue.invokeLater(new Runnable() {
             public void run() {

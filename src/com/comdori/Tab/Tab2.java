@@ -25,12 +25,13 @@ public class Tab2 extends JPanel {
         editorPane.setBounds(1069, 44, 113, 611);
         add(editorPane);
 
-        /* 				브라우저			 */
+        /* 				브라우저
         Browser browser = new Browser();
         BrowserView browserView = new BrowserView(browser);
         browserView.setLocation(0, 0);
         add(browserView, BorderLayout.CENTER);
         browserView.setSize(1062, 658);
         browser.loadURL("http://maps.google.com");  //구글지도 URL
+        */
     }
 }
