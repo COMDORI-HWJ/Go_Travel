@@ -100,12 +100,9 @@ public class Main extends JFrame {
         pane.addTab("날씨", tab4);
         tab4.setLayout(null);
 
-/*
         Tab5 tab5 = new Tab5();
         pane.addTab("번역기", tab5);
         tab5.setLayout(null);
-*/
-
 
         return pane;
     }
